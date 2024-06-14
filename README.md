@@ -1,7 +1,9 @@
 # React Blog
 
 This is a blog created with React which allows you to add and delete posts, and fetch data from external sources.
+
 <img src="./public/pic1.png" width="500px">
+
 <img src="./public/pic2.png" width="500px">
 
 ## Project Overview
