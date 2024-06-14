@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# React Blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a blog created with React which allows you to add and delete posts, and fetch data from external sources.
 
-## Available Scripts
+## Project Overview
+My goal was to apply what I learned by building a blog with React.
+- First, I built basic components like the navbar, blog list, etc.
+- I set up a mock database to simulate a running server fetching data.
+- I implemented routing to render different page components.
 
-In the project directory, you can run:
+## Project Navigation
+- I created a reusable custom hook called `useFetch` for data fetching.
+- Integrated `AbortController` into `useFetch` to handle aborted requests.
+- Simulated a RESTful API using JSON Server to handle GET, POST, PUT, and DELETE methods.
+- Used React Router and the `<Link>` component to update the URL and render components without refreshing the entire page, enhancing the user experience.
 
-### `npm start`
+## Future Improvements
+- Currently, the blog content is plain text. I plan to support Markdown syntax, rendering it as HTML.
+- Add search, categorization, and user authentication features.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Change to your working directory and run:
+```sh
+npm install
+```
 
-### `npm test`
+### Install JSON Server
+```sh
+npm install -g json-server
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Start the Server
+```sh
+npx json-server --watch data/db.json --port 8000
+```
+Adjust the path to `data/db.json` or the port if necessary. If the port changes, update the port in the `useFetch` hook in `BlogDetails.js`.
 
-### `npm run build`
+### Run React
+```sh
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Now, you can try this app by copying and pasting the URL into your browser.
